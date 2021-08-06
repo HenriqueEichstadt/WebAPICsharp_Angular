@@ -28,17 +28,17 @@ export class InsertUsuarioComponent implements OnInit {
 
   buildForm() {
     this.usuarioForm = this.fb.group({
-      username: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
+      username: [
+        null,
+        [Validators.required, Validators.minLength(5), Validators.maxLength(100)],
+        [this.usuarioExistenteServive.usuarioJaExite()]
+      ],
       email: [null, [Validators.required, Validators.email, Validators.maxLength(100)]],
       password: [null, [Validators.required, Validators.minLength(6), Validators.maxLength(100)]]
     });
   }
 
   salvar(): void {
-    if(this.usuarioService.existeUsuario(this.usuarioForm.controls['username'].value.name)) {
-      alert("Usuário já cadastrado");
-    }
-
     this.usuarioService.saveUsuario(this.usuarioForm.value).subscribe(
       () => this.router.navigate(['home']),
       (error) => console.log("Erro: " + error.message));
