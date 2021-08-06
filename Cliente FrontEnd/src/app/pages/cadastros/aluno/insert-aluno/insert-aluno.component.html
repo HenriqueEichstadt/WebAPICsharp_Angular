@@ -1,0 +1,35 @@
+<h1>Cadastro de Aluno</h1>
+<form nz-form [formGroup]="alunoForm">
+
+    <div nz-row>
+        <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10">
+            <nz-form-label nzFor="nome" nzRequired>Nome</nz-form-label>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Informe o nome">
+                    <input nz-input id="nome" formControlName="nome" />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+    </div>
+
+    <div nz-row>
+        <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10">
+            <nz-form-label nzFor="telefone" nzRequired>Telefone</nz-form-label>
+            <nz-form-item>
+                <nz-form-control nzErrorTip="Informe o subtítulo">
+                    <input nz-input id="telefone" formControlName="telefone" />
+                </nz-form-control>
+            </nz-form-item>
+        </div>
+    </div>
+
+    <div nz-row class="register-area">
+      <nz-form-control nz-col nzSm="2" nzXs="24">
+          <button nz-button nzType="primary" (click)="salvar()">Salvar</button>
+      </nz-form-control>
+      <nz-form-control nz-col nzSm="2" nzXs="24">
+          <button nz-button nzType="default" (click)="voltar()">Voltar</button>
+      </nz-form-control>
+    </div>
+
+</form>

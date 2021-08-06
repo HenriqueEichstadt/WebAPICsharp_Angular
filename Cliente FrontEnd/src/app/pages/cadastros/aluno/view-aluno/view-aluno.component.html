@@ -1,0 +1,26 @@
+<h1>Vizualização de Aluno</h1>
+
+<div nz-row>
+    <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10">
+        <label>Id Aluno</label>
+        <p><strong>{{entity?.idAluno}}</strong></p>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10">
+        <label>Nome</label>
+        <p><strong>{{entity?.nome}}</strong></p>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10">
+        <label>Telefone</label>
+        <p><strong>{{entity?.telefone}}</strong></p>
+    </div>
+</div>
+
+<div nz-row>
+    <button nz-button nzType="default" (click)="voltar()">Voltar</button>
+</div>

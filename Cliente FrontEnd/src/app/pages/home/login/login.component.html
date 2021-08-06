@@ -1,0 +1,34 @@
+<form nz-form [formGroup]="loginForm" class="login-form" nzJustify="center" nzAlign="middle">
+
+  <div nz-row nzJustify="center" nzAlign="middle">
+    <div nz-col nzSpan="1">
+      <h1>Login</h1>
+    </div>
+  </div>
+  <div nz-row nzJustify="center" nzAlign="middle">
+    <div nz-col nzSpan="6">
+      <nz-form-control nzErrorTip="Please input your Username!">
+        <nz-input-group nzPrefixIcon="user">
+          <input type="text" nz-input formControlName="password" [(ngModel)]="usuario" placeholder="Username" />
+        </nz-input-group>
+      </nz-form-control>
+    </div>
+  </div>
+
+  <div nz-row nzJustify="center" nzAlign="middle">
+    <div nz-col nzSpan="6">
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input type="password" nz-input formControlName="password" [(ngModel)]="senha" placeholder="Password" />
+        </nz-input-group>
+      </nz-form-control>
+    </div>
+  </div>
+
+  <div nz-row nzJustify="center" nzAlign="middle">
+    <div nz-col nzSpan="1">
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'" (click)="login()">Log in</button>
+    </div>
+  </div>
+
+</form>
