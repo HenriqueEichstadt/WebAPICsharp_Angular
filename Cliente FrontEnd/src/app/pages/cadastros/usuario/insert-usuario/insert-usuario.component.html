@@ -5,8 +5,16 @@
         <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10" nz-a>
             <nz-form-label nzFor="username" nzRequired>Nome de usuário</nz-form-label>
             <nz-form-item>
-                <nz-form-control nzErrorTip="Informe o nome de usuário">
+                <nz-form-control [nzErrorTip]="username">
                     <input nz-input id="username" formControlName="username" />
+
+                    <ng-template #username let-control>
+                      <ng-container *ngIf="control.hasError('minlength')">Mínimo de 5 caracteres</ng-container>
+                      <ng-container *ngIf="control.hasError('maxlength')">Máximo de 100 caracteres</ng-container>
+                      <ng-container *ngIf="control.hasError('required')">Nome de usuário obrigatório</ng-container>
+                    </ng-template>
+
+
                 </nz-form-control>
             </nz-form-item>
         </div>
@@ -16,8 +24,15 @@
         <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10">
             <nz-form-label nzFor="email" nzRequired>E-mail</nz-form-label>
             <nz-form-item>
-                <nz-form-control nzErrorTip="Informe o e-mail">
+                <nz-form-control [nzErrorTip]="email">
                     <input nz-input id="email" formControlName="email" />
+
+                    <ng-template #email let-control>
+                      <ng-container *ngIf="control.hasError('email')">Informe um e-mail válido</ng-container>
+                      <ng-container *ngIf="control.hasError('maxlength')">Máximo de 100 caracteres</ng-container>
+                      <ng-container *ngIf="control.hasError('required')">Nome de usuário obrigatório</ng-container>
+                    </ng-template>
+
                 </nz-form-control>
             </nz-form-item>
         </div>
@@ -27,8 +42,15 @@
       <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10">
           <nz-form-label nzFor="password" nzRequired>Senha</nz-form-label>
           <nz-form-item>
-              <nz-form-control nzErrorTip="Informe a senha">
+              <nz-form-control [nzErrorTip]="password">
                   <input nz-input id="password" formControlName="password" type="password" />
+
+                  <ng-template #password let-control>
+                    <ng-container *ngIf="control.hasError('minlength')">Mínimo de 6 caracteres</ng-container>
+                    <ng-container *ngIf="control.hasError('maxlength')">Máximo de 100 caracteres</ng-container>
+                    <ng-container *ngIf="control.hasError('required')">Senha obrigatória</ng-container>
+                  </ng-template>
+
               </nz-form-control>
           </nz-form-item>
       </div>

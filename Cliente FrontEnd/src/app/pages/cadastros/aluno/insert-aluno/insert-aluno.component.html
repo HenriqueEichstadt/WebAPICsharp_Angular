@@ -5,8 +5,15 @@
         <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10">
             <nz-form-label nzFor="nome" nzRequired>Nome</nz-form-label>
             <nz-form-item>
-                <nz-form-control nzErrorTip="Informe o nome">
+                <nz-form-control [nzErrorTip]="nome">
                     <input nz-input id="nome" formControlName="nome" />
+
+                    <ng-template #nome let-control>
+                      <ng-container *ngIf="control.hasError('minlength')">Mínimo de 5 caracteres</ng-container>
+                      <ng-container *ngIf="control.hasError('maxlength')">Máximo de 100 caracteres</ng-container>
+                      <ng-container *ngIf="control.hasError('required')">Nome obrigatório</ng-container>
+                    </ng-template>
+
                 </nz-form-control>
             </nz-form-item>
         </div>
@@ -16,8 +23,14 @@
         <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10">
             <nz-form-label nzFor="telefone" nzRequired>Telefone</nz-form-label>
             <nz-form-item>
-                <nz-form-control nzErrorTip="Informe o subtítulo">
-                    <input nz-input id="telefone" formControlName="telefone" />
+                <nz-form-control [nzErrorTip]="telefone">
+                    <input nz-input id="telefone" formControlName="telefone">
+
+                    <ng-template #telefone let-control>
+                      <ng-container *ngIf="control.hasError('maxlength')">Máximo de 15 caracteres</ng-container>
+                      <ng-container *ngIf="control.hasError('required')">Telefone obrigatório</ng-container>
+                    </ng-template>
+
                 </nz-form-control>
             </nz-form-item>
         </div>

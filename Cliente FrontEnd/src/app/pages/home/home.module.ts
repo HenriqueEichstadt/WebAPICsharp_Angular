@@ -11,6 +11,7 @@ import { HomeRoutingModule } from './home-routing.module';
 
 import { HomeComponent } from './home.component';
 import { LoginComponent } from './login/login.component';
+import { MensagemModule } from 'src/app/componentes/mensagem/mensagem.module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     HttpClientJsonpModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MensagemModule
   ],
 
   exports: [

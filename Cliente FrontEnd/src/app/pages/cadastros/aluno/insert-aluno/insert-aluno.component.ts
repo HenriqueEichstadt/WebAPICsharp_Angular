@@ -23,7 +23,7 @@ export class InsertAlunoComponent implements OnInit {
   buildForm() {
     this.alunoForm = this.fb.group({
       idAluno: [0, []],
-      nome: [null, [Validators.required, Validators.maxLength(100)]],
+      nome: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
       telefone: [null, [Validators.required, Validators.maxLength(15)]]
     })
   }

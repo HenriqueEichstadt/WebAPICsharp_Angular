@@ -8,13 +8,15 @@ import { AlunoService } from './aluno.service';
 import { ViewAlunoComponent } from './view-aluno/view-aluno.component';
 import { InsertAlunoComponent } from './insert-aluno/insert-aluno.component';
 import { UpdateAlunoComponent } from './update-aluno/update-aluno.component';
+import { MensagemModule } from 'src/app/componentes/mensagem/mensagem.module';
 
 
 @NgModule({
   imports: [
     SharedModule,
     CommonModule,
-    AlunoRoutingModule
+    AlunoRoutingModule,
+    MensagemModule
   ],
   declarations: [
     GridAlunoComponent,

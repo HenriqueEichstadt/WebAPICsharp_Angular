@@ -5,6 +5,7 @@ import { UsuarioRoutingModule } from './usuario-routing.module';
 import { InsertUsuarioComponent } from './insert-usuario/insert-usuario.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { UsuarioService } from './usuario.service';
+import { MensagemModule } from 'src/app/componentes/mensagem/mensagem.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { UsuarioService } from './usuario.service';
   imports: [
     SharedModule,
     CommonModule,
-    UsuarioRoutingModule
+    UsuarioRoutingModule,
+    MensagemModule
   ],
   exports: [
     InsertUsuarioComponent
